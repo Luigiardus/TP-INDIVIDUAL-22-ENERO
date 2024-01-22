@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5DJuegos</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="./images/images.png">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="brand">5DJuegos</div>
+            <div class="nav-links">
+                <a href="./pages/juegos.html" class="nav-link">Juegos</a>
+                <a href="./pages/noticias.html" class="nav-link">Noticias</a>
+                <a href="./pages/hardware.html" class="nav-link">Hardware</a>
+                <a href="./pages/login.html" class="nav-link">Ingresar</a>
+                <a href="./pages/register.html" class="nav-link">Registrarse</a>
+            </div>
+        </div>
+    </nav>
+    <div class="animation-container" id="animationContainer">
+        <script>
+            const gameDescriptions = [
+                {
+                    title: "The Legend of Zelda: Breath of the Wild",
+                    genre: "Accion-Aventura",
+                    platform: "Nintendo Switch",
+                    image: "./images/3030438 (2).jpg"
+                },
+                {
+                    title: "Red Dead Redemption 2",
+                    genre: "Acction-Aventura",
+                    platform: "PS4, Xbox One, PC",
+                    image: "./images/15576762935731 (1).jpg"
+                },
+                {
+                    title: "Minecraft",
+                    genre: "Sandbox",
+                    platform: "Multiple Platforms",
+                    image: "./images/minecraft (1).jpg"
+                },
+                
+                {
+                    title: "Fish 2",
+                    genre: "Romance",
+                    platform: "Multiple Platforms",
+                    image: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXZibDNzZW5udG5naXl5aHNmZHQ4cXFocjhidGN2ejF2ZmE3aW93biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lPuW5AlR9AeWzSsIqi/giphy.gif"
+                },
+            ];
+
+            const container = document.getElementById("animationContainer");
+            let currentPosition = 0;
+
+            function moveBoxes() {
+                container.style.transform = `translateX(${currentPosition}px)`;
+                currentPosition -= 0.02; 
+                requestAnimationFrame(moveBoxes);
+            }
+
+            for (let i = 0; i < 10; i++) {
+                for (let j = 0; j < gameDescriptions.length; j++) {
+                    document.write(`<div class="game-box">
+                                        <img src="${gameDescriptions[j].image}" alt="${gameDescriptions[j].title}">
+                                        <h2>${gameDescriptions[j].title}</h2>
+                                        <p>Genero: ${gameDescriptions[j].genre}</p>
+                                        <p>Plataforma: ${gameDescriptions[j].platform}</p>
+                                    </div>`);
+                }
+            }
+
+            moveBoxes();
+        </script>
+    </div>
+    <section class="news-container">
+    <article class="news-article">
+        <img src="./images/images.png" alt="">
+        <h2>Gato pixel</h2>
+        <p>La nueva aventura de gato pixel llegara en este corto verano del 2033
+
+        </p>
+        <br>
+        <a href="https://www.youtube.com/watch?v=ycHVUvvOwzY">Conoce mas</a>
+    </article>
+    <article class="news-article">
+        <img src="./images/gta-6-3243960 (1).jpg" alt="">
+        <h2>GTA 6, el juego mas esperado y especulado de esta decada</h2>
+        <br>
+        <br>
+        <p>Grand Theft Auto VI es un próximo videojuego que está siendo 
+            desarrollado por Rockstar Games. Será la octava entrega principal 
+            de dicha serie, tras Grand Theft Auto V de 2013, y la decimosexta 
+            en total. Tras años de especulaciones y filtraciones, Rockstar confirmó 
+            que el juego estaba en desarrollo en febrero de 2022.
+            Fecha de estreno inicial: 2025
+            Plataformas: PlayStation 5, Xbox Series X|S</p>
+        <br>
+        <br>
+        <br>
+        
+        <a href="https://www.youtube.com/watch?v=QdBZY2fkU-0">Trailer</a>
+    </article>
+    <article class="news-article">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXZibDNzZW5udG5naXl5aHNmZHQ4cXFocjhidGN2ejF2ZmE3aW93biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lPuW5AlR9AeWzSsIqi/giphy.gif" alt="">
+        <h2>Fish 2</h2>
+        <p>Ahora con mas agua</p>
+        <a href="https://www.youtube.com/watch?v=XeY0eOEEURM&t=8s">Refrescarse</a>
+    </article>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
+
